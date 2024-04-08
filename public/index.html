@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<h2>Something different</h2>
+<p>Look at the image</p>
+<button type="button" onclick="document.getElementById('ping').src = 'bulb_on.png'">Turn on the bulb</button>
+<img id="ping" src="bulb_off.png" width="100" height="180">
+<button type="button" onclick="document.getElementById('ping').src = 'bulb_off.png'">Turn off the bulb</button>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "e523c18b-6282-427e-ad82-87f445b31fea", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "e76a00b1-ce81-4ad8-bb14-e3ffe357f0d9", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+
+</html>
+
